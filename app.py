@@ -44,5 +44,11 @@ def admin_save():
         stat = "Done..."
         return redirect(url_for('done', stat = stat))
 
+
+
+@app.route('/test',methods=["POST","GET"])
+def testing():
+    return render_template('/Admin_Pannel/error.html')
+            
 if __name__ == "__main__":
     app.run(debug = True)
