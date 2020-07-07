@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, request, jsonify, url_for
 from werkzeug.utils import secure_filename
 import os
 
-UPLOAD_FOLDER = "./images"
+UPLOAD_FOLDER = './books'
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -38,7 +38,7 @@ def admin_save():
             for f in request.files.getlist('file'):
                 filename = secure_filename(f.filename)
                 f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        
+            
         # file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
         stat = "Done..."
