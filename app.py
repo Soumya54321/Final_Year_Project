@@ -49,6 +49,10 @@ def admin_save():
 @app.route('/test',methods=["POST","GET"])
 def testing():
     return render_template('/Admin_Pannel/error.html')
+
+@app.route('/signup',methods=["POST","GET"])
+def registration():
+    return render_template('/Admin_Pannel/signup.html')
             
 if __name__ == "__main__":
     app.run(debug = True)
