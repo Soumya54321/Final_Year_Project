@@ -41,6 +41,12 @@ else:
 # Routes to admin panel
 # ****************************************
 
+#Route for admin signup
+@app.route('/admin/signup',methods=["POST","GET"])
+def registration():
+    return render_template('/adminPanel/signup.html')
+
+
 #Route for admin dashboard
 @app.route('/admin/dashboard', methods = ["GET"])
 def admin():
@@ -73,6 +79,12 @@ def admin_save():
 # Default Routes
 # *****************************************
 
+#Route for default path
+#Route for testing purpose
+@app.route('/',methods=["POST","GET"])
+def default():
+    return render_template('/adminPanel/error.html')
+
 #Route for testing done
 @app.route('/done')
 def done():
@@ -83,10 +95,6 @@ def done():
 @app.route('/test',methods=["POST","GET"])
 def testing():
     return render_template('/adminPanel/error.html')
-
-@app.route('/signup',methods=["POST","GET"])
-def registration():
-    return render_template('/Admin_Pannel/signup.html')
             
 if __name__ == "__main__":
     app.run(debug = True)
